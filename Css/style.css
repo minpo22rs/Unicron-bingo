@@ -99,7 +99,7 @@ body {
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
-    background-image: url('/img/Controll-BingoMain.svg') !important;
+    background-image: url('/img/Controll-BingoTest.svg') !important;
 }
 
 
@@ -151,7 +151,7 @@ body {
     display: grid;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-   
+
 
 
 
@@ -230,7 +230,8 @@ body {
         transform: rotate(360deg);
     }
 }
-.speedSpin{
+
+.speedSpin {
     width: 100%;
 
     animation: rotation 0.3s infinite linear;
@@ -309,7 +310,7 @@ body {
 
 .row .btn-controll .my-btn-rand:hover {
     background-color: rgba(128, 192, 255, 0.692);
-   
+
 }
 
 .my-item-number .my-number .my-img-star {
@@ -364,7 +365,7 @@ body {
 /* Bigno Game */
 /*  MenuBar  */
 header {
-    font-family:  'Sriracha', cursive !important; 
+    font-family: 'Sriracha', cursive !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -440,3 +441,45 @@ header ul li a {
 }
 
 /*  MenuBar  */
+
+/* index Page  */
+
+.my-btn-bayCard {
+
+    background-image: linear-gradient(315deg, rgb(69, 162, 255) 0%, rgb(253, 96, 174) 100%);
+    margin-top: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 3px 1px 1px rgba(25, 136, 247, 1), 2px 2px 1px rgba(247, 25, 136, 1), 4px 2px 1px rgba(25, 136, 247, 1),
+        3px 3px 1px rgba(247, 25, 136, 1), 5px 3px 1px rgba(25, 136, 247, 1), 4px 4px 1px rgba(247, 25, 136, 1),
+        6px 4px 1px rgba(25, 136, 247, 1), 5px 5px 1px rgba(247, 25, 136, 1), 7px 5px 1px rgba(25, 136, 247, 1),
+        6px 6px 1px rgba(247, 25, 136, 1), 8px 6px 1px rgba(25, 136, 247, 1), 3px 7px 7px 1px rgba(0, 0, 0, 0.685);
+    border: 3px solid #e42598;
+    -webkit-text-stroke: 1px #e42598 !important;
+
+
+}
+
+.my-btn-bayCard:active {
+    box-shadow: inset 3px 1px 1px rgba(25, 136, 247, 1), inset 2px 2px 1px rgba(247, 25, 136, 1), inset 4px 2px 1px rgba(25, 136, 247, 1),
+        inset 3px 3px 1px rgba(247, 25, 136, 1), inset 5px 3px 1px rgba(25, 136, 247, 1), inset 4px 4px 1px rgba(247, 25, 136, 1),
+        inset 6px 4px 1px rgba(25, 136, 247, 1);
+    transform: scale(0.9);
+}
+
+.price-card {
+    color: rgb(255, 255, 255);
+    margin-top: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.5px #e42598;
+    text-shadow: 3px 1px 1px rgba(25, 136, 247, 1), 2px 2px 1px rgba(247, 25, 136, 1), 4px 2px 1px rgba(25, 136, 247, 1), 3px 3px 1px rgba(247, 25, 136, 1);
+
+
+
+}
+
+/* index Page  */
