@@ -124,10 +124,10 @@ body {
     width: 100px;
     height: 100px;
     color: #ffffff;
- 
+
 
     border-radius: 100px;
- 
+
     line-height: 110px !important;
 
     font-weight: 900;
@@ -135,7 +135,7 @@ body {
     font-size: clamp(1.5rem, 5vw, 3.5rem);
     -webkit-text-stroke: 1px #e42598;
     text-shadow: 3px 1px 1px rgba(25, 136, 247, 1), 2px 2px 1px rgba(247, 25, 136, 1), 4px 2px 1px rgba(25, 136, 247, 1), 3px 3px 1px rgba(247, 25, 136, 1), 5px 3px 1px rgba(25, 136, 247, 1), 4px 4px 1px rgba(247, 25, 136, 1);
-   
+
 
 
 
@@ -149,17 +149,18 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
 
 
 
 }
-.controll-game .rand-main .rand-count #TimeBingo{
+
+.controll-game .rand-main .rand-count #TimeBingo {
     grid-column: main-3 / main-3;
     grid-row: 2/5;
-   
-   
-    
+
+
+
 
 
 
@@ -205,6 +206,29 @@ body {
 
 
 }
+
+.Spin_icon {
+    width: 100%;
+    animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.speedSpin{
+    width: 100%;
+
+    animation: rotation 0.3s infinite linear;
+}
+/* button:active #sharp_icon {
+    animation: rotation 3s infinite linear;
+} */
 
 .controll-game .btn-controll .btn-auto {
     grid-column: main-3 / main-3;

@@ -50,18 +50,22 @@ function random() {
       numberR = numRan;
     }
     setTimeout(function () {
-      document.getElementById("number").classList.add("fade-out");
+      document.getElementById("sharp_icon").classList.remove("Spin_icon");
+      document.getElementById("sharp_icon").classList.add("speedSpin");
+   
       setTimeout(function () {
         document.getElementById("number").innerHTML = numberR;
         setTimeout(function () {
-          document.querySelector(".my-label-D").style.transform = "scale(2.1, 2.1)";
+          document.querySelector(".my-label-D").style.transform =
+            "scale(2.3, 2.3)";
           setTimeout(function () {
             document.querySelector(".my-label-D").style.transform =
-              "scale(0.9, 0.9)";
+              "scale(1.1, 1.1)";
+                  document.getElementById("sharp_icon").classList.remove("speedSpin");
+            document.getElementById("sharp_icon").classList.add("Spin_icon");
+           
           }, 230);
         }, 5);
-
-        document.getElementById("number").classList.remove("fade-out");
       }, 100);
     }, 100);
 
