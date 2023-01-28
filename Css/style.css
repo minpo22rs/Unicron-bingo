@@ -90,34 +90,31 @@ body {
 .controll-game {
     width: 650px;
     height: 255px;
+    display: grid !important;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+    grid-template-rows: repeat(2, 1fr);
+
+
 
     background-position: center;
-    /* background-size: auto; */
+    background-size: auto;
     background-repeat: no-repeat;
-    background-image: url('/img/Controll-Bingo11.svg') !important;
+    background-image: url('/img/Controll-BingoTest.svg') !important;
 }
 
-.row .my-btn-rand {
-    width: 90px;
-    height: 90px;
-    font-size: 40px;
-    border-radius: 100%;
-    text-align: center;
 
 
-    color: aliceblue;
-    background-color: rgb(101, 175, 248);
-    border: 5px solid #bfd0e7;
-    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.14);
+
+/* rand-main */
+.controll-game .rand-main {
+    grid-column: main-2 / main-3;
+    grid-row: 1;
+
+    background-color: #98b6e05d;
 
 }
 
-.row .my-btn-rand:hover {
-    background-color: #a1bce65e;
-    border: 3px solid #98b6e0;
-}
-
-.row .my-HranD {
+.row .rand-main .my-HranD {
     width: 100px;
     height: 100px;
     color: #fafcff;
@@ -128,6 +125,7 @@ body {
     line-height: 89px;
     border: 5px solid #ffffff;
     box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.27);
+
 
 
 
@@ -139,20 +137,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.row .my-HranB {
-    width: 100px;
-    height: 100px;
-    color: #fafcff;
 
-    background-image: linear-gradient(315deg, rgba(128, 191, 255, 1) 0%, rgba(255, 92, 173, 1) 100%);
-    border-radius: 100px;
-    text-align: center;
-    line-height: 89px;
-    border: 5px solid #ffffff;
-    box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.27);
-
-
-}
 
 .my-bingo {
     background-color: #6ba6ff !important;
@@ -162,6 +147,100 @@ body {
     background-image: linear-gradient(315deg, rgba(128, 191, 255, 1) 0%, rgba(255, 92, 173, 1) 100%);
 
 
+}
+
+/* rand-main */
+
+/* btn-controll */
+.controll-game .btn-controll {
+    grid-column: main-2 / main-3;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    /* background-color: #6bfff360; */
+}
+
+.controll-game .btn-controll .my-btn-rand {
+    grid-column: main-2 / main-3;
+    grid-row: 1 /2;
+    margin: 1px 2px 3px 0 !important;
+    
+
+
+}
+.controll-game .btn-controll .btn-auto {
+    grid-column: main-3 / main-3 ;
+    grid-row: 1 /2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+   
+   
+
+    
+
+
+}
+.controll-game .btn-controll .btn-auto .my-label-CB {
+    grid-column: main-2 ;
+    
+   
+   
+
+    
+
+
+}
+.controll-game .btn-controll .btn-turbo {
+    grid-column: main-1 / main-1 ;
+    grid-row: 1 /2;
+  
+    display: grid;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+
+    
+   
+
+    
+
+
+}
+.controll-game .btn-controll .btn-turbo .my-label-CB{
+  grid-column: main-2 ;
+
+    
+   
+
+    
+
+
+}
+
+
+
+
+
+.row .btn-controll .my-btn-rand {
+    width: 72px;
+    height: 72px;
+    font-size: 40px;
+    border-radius: 100%;
+    text-align: center;
+
+
+    color: aliceblue;
+    background-color: rgb(101, 175, 248);
+   
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.14);
+
+}
+
+.row .btn-controll .my-btn-rand:hover {
+    background-color: #a1bce65e;
+    border: 3px solid #98b6e0;
 }
 
 .my-item-number .my-number .my-img-star {
@@ -178,7 +257,7 @@ body {
     display: none;
 }
 
-.row .my-label-CB {
+.row .btn-controll .my-label-CB {
     width: 50px;
     height: 50px;
     font-size: 40px;
@@ -186,16 +265,17 @@ body {
     text-align: center;
     color: aliceblue;
     background-color: rgb(101, 175, 248);
-    border: 5px solid #bfd0e7;
+    /* border: 2px solid #bfd0e7; */
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.14);
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
+    margin: 1px 2px 3px 0;
 
 }
 
-.row .my-label-CB #tick_mark {
+.row .btn-controll .my-label-CB #tick_mark {
     font-size: 10px;
     text-align: center;
 
@@ -209,6 +289,8 @@ body {
     background-color: rgba(255, 92, 173, 1);
 
 }
+
+/* btn-controll */
 
 /* Bigno Game */
 /*  MenuBar  */
