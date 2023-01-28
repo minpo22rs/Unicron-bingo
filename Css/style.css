@@ -9,7 +9,7 @@ body {
     background-image: linear-gradient(135deg, rgb(83, 163, 243) 0%, rgb(240, 81, 161) 100%);
     font-weight: 700 !important;
     /* font-family: 'Pacifico', cursive !important; */
-    font-family: 'Sriracha', cursive !important;
+    font-family: 'Kavoon', cursive !important;
 
 }
 
@@ -147,9 +147,12 @@ body {
     justify-items: center;
     align-items: center;
     width: 100%;
+    height: 70%;
     display: grid;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+
 
 
 
@@ -157,7 +160,13 @@ body {
 
 .controll-game .rand-main .rand-count #TimeBingo {
     grid-column: main-3 / main-3;
-    grid-row: 2/5;
+    grid-row: 2/4;
+    color: rgb(255, 255, 255);
+    margin-top: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.5px #e42598;
+    text-shadow: 3px 1px 1px rgba(25, 136, 247, 1), 2px 2px 1px rgba(247, 25, 136, 1), 4px 2px 1px rgba(25, 136, 247, 1), 3px 3px 1px rgba(247, 25, 136, 1);
 
 
 
@@ -355,6 +364,7 @@ body {
 /* Bigno Game */
 /*  MenuBar  */
 header {
+    font-family:  'Sriracha', cursive !important; 
     position: fixed;
     top: 0;
     left: 0;
