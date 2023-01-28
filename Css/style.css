@@ -468,6 +468,7 @@ header ul li a {
         inset 3px 3px 1px rgba(247, 25, 136, 1), inset 5px 3px 1px rgba(25, 136, 247, 1), inset 4px 4px 1px rgba(247, 25, 136, 1),
         inset 6px 4px 1px rgba(25, 136, 247, 1);
     transform: scale(0.9);
+    border: none;
 }
 
 .price-card {
