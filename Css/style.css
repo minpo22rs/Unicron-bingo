@@ -10,7 +10,7 @@ body {
     font-weight: 700 !important;
     /* font-family: 'Pacifico', cursive !important; */
     font-family: 'Sriracha', cursive !important;
-   
+
 }
 
 /* Bigno Game */
@@ -32,9 +32,9 @@ body {
 #tableBingo {
     display: grid;
     grid-template-rows: 110px 1fr;
-   
+
     grid-template-columns: 1fr;
-  
+
 }
 
 #tableBingo tbody {
@@ -62,13 +62,15 @@ body {
     border-radius: 100%;
     text-align: center;
     /* border: 3px solid rgba(128, 191, 255, 1); */
-    padding: 0.2rem;;
+    padding: 0.2rem;
+    ;
 
 
 
 
 }
-.my-card_2 .my-item-number .my-number p{
+
+.my-card_2 .my-item-number .my-number p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,11 +80,21 @@ body {
     border-radius: 100%;
     text-align: center;
     background-color: #ffffff;
-  
 
 
 
 
+
+}
+
+.controll-game {
+    width: 650px;
+    height: 255px;
+
+    background-position: center;
+    /* background-size: auto; */
+    background-repeat: no-repeat;
+    /* background-image: url('/img/controll-bingo.png') !important; */
 }
 
 .row .my-btn-rand {
@@ -238,7 +250,8 @@ header .logo {
     transition: 0.6s;
 
 }
-header .logo img{
+
+header .logo img {
     width: 11rem;
 
 }
@@ -247,14 +260,14 @@ header ul {
     position: relative;
     display: flex;
     justify-content: center !important;
-    align-items: center!important;
+    align-items: center !important;
     margin: 0;
 }
 
 header ul li {
     position: relative;
     list-style: none;
-    
+
 }
 
 header ul li a {
