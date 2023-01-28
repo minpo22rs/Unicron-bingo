@@ -1,6 +1,11 @@
-let count = 3000;
+let count = 300;
 let statusBingo = 0;
 let CheckS = 0;
+countBingo()
+function countBingo(){
+  document.getElementById("TimeBingo").innerHTML = count;
+  
+}
 document.getElementById("_checkbox").addEventListener("change", function () {
   if (this.checked) {
     CheckS = 0;
@@ -52,7 +57,7 @@ function random() {
     setTimeout(function () {
       document.getElementById("sharp_icon").classList.remove("Spin_icon");
       document.getElementById("sharp_icon").classList.add("speedSpin");
-   
+
       setTimeout(function () {
         document.getElementById("number").innerHTML = numberR;
         setTimeout(function () {
@@ -61,9 +66,8 @@ function random() {
           setTimeout(function () {
             document.querySelector(".my-label-D").style.transform =
               "scale(1.1, 1.1)";
-                  document.getElementById("sharp_icon").classList.remove("speedSpin");
+            document.getElementById("sharp_icon").classList.remove("speedSpin");
             document.getElementById("sharp_icon").classList.add("Spin_icon");
-           
           }, 230);
         }, 5);
       }, 100);
@@ -86,10 +90,132 @@ function random() {
     if (CompletedLines[0] >= 1) {
       statusBingo = 1;
       console.log("Row  Bingo! You won!");
+
+      var duration = 15 * 1000;
+      var animationEnd = Date.now() + duration;
+      var defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 9000,
+      };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var interval = setInterval(function () {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        var particleCount = 50 * (timeLeft / duration);
+        // since particles fall down, start a bit higher than random
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          })
+        );
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          })
+        );
+      }, 550);
+
+      Swal.fire({
+        icon: "success",
+        title:
+          "<h2 >ยินดีด้วย" +
+          "คุณ: " +
+          "&nbsp;&nbsp;Bingo!</h2>" ,
+        width: 600,
+        padding: "3em",
+        color: "#716add",
+        background:
+          "#fff url(https://sweetalert2.github.io/#examplesimages/trees.png)",
+        backdrop: `rgba(0,0,123,0.4)`,
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      }).then((result) => {
+        if (result.value) {
+          clearInterval(interval);
+        }
+      });
     } else if (CompletedLines[1] >= 1) {
       statusBingo = 1;
-
       console.log("Colum  Bingo! You won!");
+      var duration = 15 * 1000;
+      var animationEnd = Date.now() + duration;
+      var defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 9000,
+      };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      var interval = setInterval(function () {
+        var timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        var particleCount = 50 * (timeLeft / duration);
+        // since particles fall down, start a bit higher than random
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          })
+        );
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          })
+        );
+      }, 550);
+
+      Swal.fire({
+        icon: "success",
+        title:
+          "<h2 >ยินดีด้วย" +
+          "คุณ: " +
+          "&nbsp;&nbsp;Bingo!</h2>",
+        width: 600,
+        padding: "3em",
+        color: "#716add",
+        background:
+          "#fff url(https://sweetalert2.github.io/#examplesimages/trees.png)",
+        backdrop: `rgba(0,0,123,0.4)`,
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      }).then((result) => {
+        if (result.value) {
+          clearInterval(interval);
+        }
+      });
     }
   } else {
     console.log("มีคน Bingo แล้ว");
