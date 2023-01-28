@@ -482,5 +482,8 @@ header ul li a {
 
 
 }
+.modal-content{
+    background-image: linear-gradient(315deg, rgb(69, 162, 255) 0%, rgb(253, 96, 174) 100%) !important;
 
+}
 /* index Page  */

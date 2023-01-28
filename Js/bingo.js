@@ -1,4 +1,4 @@
-let count = 30;
+let count = 3000;
 let statusBingo = 0;
 let CheckS = 0;
 document.getElementById("_checkbox").addEventListener("change", function () {
@@ -25,7 +25,7 @@ function loop() {
     } else {
       clearInterval(TimeBingo);
     }
-  }, 600);
+  }, 100);
 }
 
 function random() {
@@ -145,7 +145,7 @@ function checkForCompletedLines(numberR) {
   for (var i = 0, row; (row = table.rows[i]); i++) {
     var completed = true;
     for (var j = 0, col; (col = row.cells[j]); j++) {
-      if (col.classList[2] !== "bingo") {
+      if (col.classList[2] !== "my-bingo") {
         completed = false;
         rowB = i;
         break;
@@ -164,7 +164,7 @@ function checkForCompletedLines(numberR) {
     var completed = true;
     for (var j = 0, row; (row = table.rows[j]); j++) {
       var col = row.cells[i];
-      if (col.classList[2] !== "bingo") {
+      if (col.classList[2] !== "my-bingo") {
         completed = false;
         colB = j;
         break;
