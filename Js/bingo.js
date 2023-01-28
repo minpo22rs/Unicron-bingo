@@ -53,11 +53,14 @@ function random() {
       document.getElementById("number").classList.add("fade-out");
       setTimeout(function () {
         document.getElementById("number").innerHTML = numberR;
-        document.querySelector(".my-label-D").style.transform = "scale(2, 2)";
-
         setTimeout(function () {
-          document.querySelector(".my-label-D").style.transform = "scale(1, 1)";
-        }, 270);
+          document.querySelector(".my-label-D").style.transform = "scale(2.1, 2.1)";
+          setTimeout(function () {
+            document.querySelector(".my-label-D").style.transform =
+              "scale(0.9, 0.9)";
+          }, 230);
+        }, 5);
+
         document.getElementById("number").classList.remove("fade-out");
       }, 100);
     }, 100);
