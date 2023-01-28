@@ -93,13 +93,13 @@ body {
     display: grid !important;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
     grid-template-rows: repeat(2, 1fr);
-
+    row-gap: 23px;
 
 
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
-    background-image: url('/img/Controll-BingoTest.svg') !important;
+    background-image: url('/img/Controll-BingoMain.svg') !important;
 }
 
 
@@ -109,23 +109,57 @@ body {
 .controll-game .rand-main {
     grid-column: main-2 / main-3;
     grid-row: 1;
-
-    background-color: #98b6e05d;
+    display: grid;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
 
 }
 
 .row .rand-main .my-HranD {
+    grid-column: main-2;
+    grid-row: 1;
+
     width: 100px;
     height: 100px;
-    color: #fafcff;
+    color: #ffffff;
+ 
 
-    background-image: linear-gradient(315deg, rgba(128, 191, 255, 1) 0%, rgba(255, 92, 173, 1) 100%);
     border-radius: 100px;
-    text-align: center;
-    line-height: 89px;
-    border: 5px solid #ffffff;
-    box-shadow: 2px 2px 8px 3px rgba(0, 0, 0, 0.27);
+ 
+    line-height: 110px !important;
 
+    font-weight: 900;
+
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
+    -webkit-text-stroke: 1px #e42598;
+    text-shadow: 3px 1px 1px rgba(25, 136, 247, 1), 2px 2px 1px rgba(247, 25, 136, 1), 4px 2px 1px rgba(25, 136, 247, 1), 3px 3px 1px rgba(247, 25, 136, 1), 5px 3px 1px rgba(25, 136, 247, 1), 4px 4px 1px rgba(247, 25, 136, 1);
+   
+
+
+
+}
+
+.controll-game .rand-main .rand-count {
+    grid-column: main-1 / main-1;
+    grid-row: 1;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+    grid-template-rows: 1fr 1fr ;
+
+
+
+}
+.controll-game .rand-main .rand-count #TimeBingo{
+    grid-column: main-3 / main-3;
+    grid-row: 2/5;
+   
+   
+    
 
 
 
@@ -167,54 +201,58 @@ body {
     grid-column: main-2 / main-3;
     grid-row: 1 /2;
     margin: 1px 2px 3px 0 !important;
-    
+
 
 
 }
+
 .controll-game .btn-controll .btn-auto {
-    grid-column: main-3 / main-3 ;
+    grid-column: main-3 / main-3;
     grid-row: 1 /2;
     width: 100%;
     display: grid;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
-   
-   
 
-    
+
+
+
 
 
 }
+
 .controll-game .btn-controll .btn-auto .my-label-CB {
-    grid-column: main-2 ;
-    
-   
-   
+    grid-column: main-2;
 
-    
+
+
+
+
 
 
 }
+
 .controll-game .btn-controll .btn-turbo {
-    grid-column: main-1 / main-1 ;
+    grid-column: main-1 / main-1;
     grid-row: 1 /2;
-  
+
     display: grid;
     grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
 
-    
-   
 
-    
+
+
+
 
 
 }
-.controll-game .btn-controll .btn-turbo .my-label-CB{
-  grid-column: main-2 ;
 
-    
-   
+.controll-game .btn-controll .btn-turbo .my-label-CB {
+    grid-column: main-2;
 
-    
+
+
+
+
 
 
 }
@@ -233,7 +271,7 @@ body {
 
     color: aliceblue;
     background-color: rgb(101, 175, 248);
-   
+
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.14);
 
 }
