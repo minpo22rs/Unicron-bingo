@@ -10,10 +10,110 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <style>
+    :root {
+        --backgroundColor: rgba(246, 241, 209);
+        --colorShadeA: rgb(106, 163, 137);
+        --colorShadeB: rgb(121, 186, 156);
+        --colorShadeC: rgb(150, 232, 195);
+        --colorShadeD: rgb(187, 232, 211);
+        --colorShadeE: rgb(205, 255, 232);
+    }
 
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+    * {
+        box-sizing: border-box;
+    }
+
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "OpenSans", sans-serif;
+        font-size: 1rem;
+        line-height: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        background: var(--backgroundColor);
+    }
+
+    button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: var(--colorShadeA);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: inherit;
+    }
+
+    button.big-button {
+        padding: 1em 2em;
+        border: 2px solid var(--colorShadeA);
+        border-radius: 1em;
+        background: var(--colorShadeE);
+        transform-style: preserve-3d;
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    }
+
+    button.big-button::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--colorShadeC);
+        border-radius: inherit;
+        box-shadow: 0 0 0 2px var(--colorShadeB);
+        transform: translate3d(0, 0.75em, -1em);
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    }
+
+    button.big-button:hover {
+        background: var(--colorShadeD);
+        transform: translate(0, 0.375em);
+        
+    }
+
+    button.big-button:hover::before {
+        transform: translate3d(0, 0.75em, -1em);
+    }
+
+    button.big-button:active {
+        transform: translate(0em, 0.75em);
+    }
+
+    button.big-button:active::before {
+        transform: translate3d(0, 0, -1em);
+
+        box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+    }
+
+
+   
+
+   
+
+    
 </style>
 
 <body>
+    <button class="big-button">don't</button>
+    <button class="big-button">push</button>
+    <button class="big-button">me</button>
 
 </body>
 <script>
@@ -73,79 +173,79 @@
     // }
     // document.body.appendChild(table);
 
-   
-
-    for (let t = 0; t < 3; t++) {
-        const table = document.createElement("table");
-        table.id = "tableBingo_"+t;
-        table.classList.add("my-card_2");
-        table.classList.add("cardBingo-"+t);
-        table.classList.add("tableBingos");
-        table.classList.add("off-Card");
-        const tb = document.createElement("tbody");
-        const uniqueNumbers = new Set();
-
-        for (let i = 0; i < 5; i++) {
-
-            const row = document.createElement("tr");
-            row.classList.add("my-item-number");
 
 
-            for (let j = 0; j < 5; j++) {
-                const randomNumber = Math.floor(Math.random() * 74) + 1;
+    // for (let t = 0; t < 3; t++) {
+    //     const table = document.createElement("table");
+    //     table.id = "tableBingo_" + t;
+    //     table.classList.add("my-card_2");
+    //     table.classList.add("cardBingo-" + t);
+    //     table.classList.add("tableBingos");
+    //     table.classList.add("off-Card");
+    //     const tb = document.createElement("tbody");
+    //     const uniqueNumbers = new Set();
 
-                let prevRand = 0;
-                const rand = (max = 10) => {
-                    time = new Date().getTime();
-                    randid = (time / randomNumber / (prevRand + 1)) % max;
+    //     for (let i = 0; i < 5; i++) {
 
-                    prevRand = randid;
-
-                    return parseInt(randid);
-                };
-                let numRan = rand(75);
-                let numberR = "";
-                if (numRan == 0) {
-                    numberR = 1;
-                } else {
-                    numberR = numRan;
-                }
+    //         const row = document.createElement("tr");
+    //         row.classList.add("my-item-number");
 
 
-                while (uniqueNumbers.has(numberR)) {
-                    numRan = rand(75);
-                    numberR = "";
-                    if (numRan == 0) {
-                        numberR = 1;
-                    } else {
-                        numberR = numRan;
-                    }
-                }
-                uniqueNumbers.add(numberR);
-                const cell = document.createElement("td");
-                cell.classList.add("my-number");
-                cell.classList.add("m-3");
-                cell.classList.add("my-bg_num");
-                cell.id = "number_"+t+"-" + numberR;
+    //         for (let j = 0; j < 5; j++) {
+    //             const randomNumber = Math.floor(Math.random() * 74) + 1;
 
-                const P = document.createElement("p");
-                P.classList.add("m-0");
+    //             let prevRand = 0;
+    //             const rand = (max = 10) => {
+    //                 time = new Date().getTime();
+    //                 randid = (time / randomNumber / (prevRand + 1)) % max;
+
+    //                 prevRand = randid;
+
+    //                 return parseInt(randid);
+    //             };
+    //             let numRan = rand(75);
+    //             let numberR = "";
+    //             if (numRan == 0) {
+    //                 numberR = 1;
+    //             } else {
+    //                 numberR = numRan;
+    //             }
+
+
+    //             while (uniqueNumbers.has(numberR)) {
+    //                 numRan = rand(75);
+    //                 numberR = "";
+    //                 if (numRan == 0) {
+    //                     numberR = 1;
+    //                 } else {
+    //                     numberR = numRan;
+    //                 }
+    //             }
+    //             uniqueNumbers.add(numberR);
+    //             const cell = document.createElement("td");
+    //             cell.classList.add("my-number");
+    //             cell.classList.add("m-3");
+    //             cell.classList.add("my-bg_num");
+    //             cell.id = "number_" + t + "-" + numberR;
+
+    //             const P = document.createElement("p");
+    //             P.classList.add("m-0");
 
 
 
-                P.innerHTML = numberR;
+    //             P.innerHTML = numberR;
 
-                cell.appendChild(P);
-                row.appendChild(cell);
+    //             cell.appendChild(P);
+    //             row.appendChild(cell);
 
-            }
+    //         }
 
-            table.appendChild(tb);
-            tb.appendChild(row);
+    //         table.appendChild(tb);
+    //         tb.appendChild(row);
 
-        }
-        document.body.appendChild(table);
-    }
+    //     }
+    //     document.body.appendChild(table);
+    // }
 
 
 
