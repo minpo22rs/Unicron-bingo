@@ -339,20 +339,6 @@ checkboxT.addEventListener("change", function () {
   }
 });
 
-// setInterval(function () {
-//   checkboxT.addEventListener("change", function () {
-//     if (checkboxT.checked) {
-//       icon_Thunder.src = "/img/icon/thunderOn.png";
-//       clearInterval(TimeBingo);
-//       intervalTurbo = 100;
-//     } else {
-//       icon_Thunder.src = "/img/icon/thunderOff.png";
-//       clearInterval(TimeBingo);
-//       intervalTurbo = 1000;
-//     }
-//   });
-//   console.log(intervalTurbo);
-// }, 100);
 
 let TestBTn = document.getElementById("TestBTn");
 let AddC = document.querySelector(".addcount");
@@ -386,4 +372,5 @@ const urlParams = new URLSearchParams(window.location.search);
 const activeIndex = urlParams.get("activeIndex");
 console.log(activeIndex);
 console.log(CardBingoAll);
+CardBingoAll[activeIndex].id ="tableBingo";
 CardBingoAll[activeIndex].classList.remove("off-Card");

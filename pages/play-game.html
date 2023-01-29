@@ -36,7 +36,7 @@
         <div id="bingoC" class="row justify-content-center">
 
 
-            <table id="tableBingo"  class="my-card_2 cardBingo-0 off-Card">
+            <table  class="my-card_2 cardBingo-0 off-Card">
 
                 <tbody>
                     <tr class="my-item-number ">
@@ -127,7 +127,7 @@
                 </tbody>
 
             </table>
-            <table id="tableBingo"  class="my-card_2 cardBingo-1 off-Card">
+            <table  class="my-card_2 cardBingo-1 off-Card">
                 <tbody>
                     <tr class="my-item-number mt-3">
                         <td class="my-number m-3 my-bg_num" id="number_1-22">
@@ -216,7 +216,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="tableBingo"  class="my-card_2 cardBingo-2 off-Card">
+            <table  class="my-card_2 cardBingo-2 off-Card">
                 <tbody>
                     <tr class="my-item-number mt-3">
                         <td class="my-number m-3 my-bg_num" id="number_1-33">
@@ -305,7 +305,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="tableBingo"  class="my-card_2 cardBingo-3 off-Card">
+            <table  class="my-card_2 cardBingo-3 off-Card">
                 <tbody>
                     <tr class="my-item-number mt-3">
                         <td class="my-number m-3 my-bg_num" id="number_1-67">
@@ -502,7 +502,11 @@
             numberField.value = parseInt(numberField.value) + 1;
 
         } else {
-            console.log("Max");
+            Swal.fire({
+                icon: "warning",
+                title: "ขออภัย! สูงสุดได้เพียง x3 ",
+                
+            });
         }
     });
     let AddCountuse = 0;
@@ -529,7 +533,16 @@
                 }
             }
         } else {
-            console.log("คุณซื้อคูณไปแล้ว");
+            Swal.fire({
+                icon: "error",
+                title: "ขออภัย! ซื้อคูณได้เพียง 1 ครั้ง/เกมส์ ",
+                showClass: {
+                    popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                    popup: "animate__animated animate__fadeOutUp",
+                },
+            });
         }
 
     });
