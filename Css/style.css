@@ -278,7 +278,7 @@ body {
 
 }
 
-.controll-game .btn-controll .btn-turbo .my-label-CB {
+.controll-game .btn-controll .btn-turbo .my-label-CB_turbo {
     grid-column: main-2;
 
 
@@ -356,6 +356,57 @@ body {
 
 
 #_checkbox:checked+label {
+    background-color: rgba(255, 92, 173, 1);
+
+}
+
+#_checkbox_turbo {
+    display: none;
+}
+
+.row .btn-controll .btn-turbo .my-label-CB_turbo {
+    width: 47px;
+    height: 47px;
+    font-size: 40px;
+    border-radius: 100%;
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(101, 175, 248);
+
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 0 2px 2px 0 !important;
+
+
+}
+
+.row .btn-controll .btn-turbo .my-label-CB_turbo #tick_mark_turbo {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    text-align: center;
+    align-items: center;
+    display: inline;
+
+
+
+}
+
+
+
+
+#_checkbox_turbo:checked+label {
+    display: block;
+
+
+
+
     background-color: rgba(255, 92, 173, 1);
 
 }
@@ -500,19 +551,29 @@ header ul li a {
 
 .btn-submit-card {
     color: rgb(255, 255, 255) !important;
-   
+
 
     background-color: rgba(247, 25, 136, 1) !important;
     border: 3px solid rgb(254, 255, 255) !important;
-    
+
 
 }
-.btn-submit-card:hover{
+
+.btn-submit-card:hover {
     color: rgb(255, 255, 255) !important;
-   
+
 
     background-color: rgba(25, 136, 247, 1) !important;
     border: 3px solid #000000 !important;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 900,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 /* index Page  */

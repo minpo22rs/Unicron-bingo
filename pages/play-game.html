@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <style>
     .my-card_2 {
@@ -20,13 +21,14 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    body{
+
+    body {
         font-family: 'Kavoon', cursive !important;
     }
 </style>
 
 <body class="">
-  <canvas id="Canvas"></canvas>
+    <canvas id="Canvas"></canvas>
 
     <div class="container container-play-game  col-10 test-center">
         <div id="menubar_file"></div>
@@ -135,34 +137,41 @@
                     </h1>
                     <div class="rand-count p-0 m-0">
                         <label id="TimeBingo">
-                            
+
                         </label>
                     </div>
-                
+
                 </div>
 
                 <div class="btn-controll ">
                     <button type="button" class="btn  my-btn-rand mx-3 p-0 text-center" onclick="random()">
-                        <img src="/img/icon-btn-bgo2.png" class="Spin_icon"  id="sharp_icon" alt="">
+                        <img src="/img/icon-btn-bgo2.png" class="Spin_icon" id="sharp_icon" alt="">
                     </button>
 
                     <div class="btn-auto">
                         <input type="checkbox" id="_checkbox">
                         <label class="my-label-CB text-center" for="_checkbox">
                             <div id="tick_mark">
-                                Auto
+                                <img width="100%" src="/img/automatic.png" alt="">
+
+
                             </div>
                         </label>
                     </div>
                     <div class="btn-turbo">
-                        <input type="checkbox" id="_checkbox">
-                        <label class="my-label-CB text-center" for="_checkbox">
-                            <div id="tick_mark">
-                                Auto
+                        <input type="checkbox" id="_checkbox_turbo">
+                        <label class="my-label-CB_turbo text-center" for="_checkbox_turbo">
+                            <div id="tick_mark_turbo" >
+                               
+                                <span class="material-symbols-outlined">
+                                    flash_off
+                                </span>
                             </div>
+
+
                         </label>
                     </div>
-                 
+
                 </div>
 
 
@@ -185,7 +194,23 @@
         .then(data => {
             document.querySelector('#menubar_file').innerHTML = data;
         });
+    var checkbox = document.getElementById("_checkbox_turbo");
 
+    var flashOff = document.getElementsByClassName("material-symbols-outlined")[0];
+
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            
+            flashOff.textContent = "flash_on";
+        
+
+        } else {
+           
+            flashOff.textContent = "flash_off";
+
+        }
+        
+    });
 </script>
 
 </html>
