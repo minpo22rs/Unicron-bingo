@@ -1,15 +1,84 @@
+<style>
+    .show-wallet-score {
+        display: grid;
 
-    <header>
+        grid-template-columns: [main-1] 140px;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 10px;
+    }
 
-        <a href="#" class="logo"><img src="/img/Logo-unicron.png" alt=""></a>
-        <ul>
-            <li><a href="/pages/index.html">Home</a></li>
-            <li><a href="/pages/play-game.html">Play Game</a></li>
-            <li><a href="/pages/redeem-rewards.html">Redeem Rewards</a></li>
-            <li><a href="/pages/wallet.html">Wallet</a></li>
-    
-        </ul>
-    </header>
+    .show-wallet-score span.spanWallet,
+    #inputWallet {
+        grid-column: main-1;
+        grid-row: 1;
+        padding-left: 10px;
+
+    }
+
+    .show-wallet-score span.spanWallet {
+        justify-self: start;
+        align-self: center;
+        z-index: 1;
+    }
+
+    .show-wallet-score #inputWallet {
+        padding: 5px;
+        padding-left: 40px;
+        border-radius: 6px;
+        border: none;
+        border: 2px solid #ff9fd8;
+
+        background-color: #f7c0e0;
+
+        /* background-image: linear-gradient(315deg, rgb(186, 220, 255) 0%, rgb(255, 205, 230) 100%); */
+
+
+    }
+
+    .show-wallet-score span.spanScore,
+    #inputScore {
+        grid-column: main-1;
+        grid-row: 2;
+        padding-left: 10px;
+
+    }
+
+    .show-wallet-score span.spanScore {
+        justify-self: start;
+        align-self: center;
+        z-index: 1;
+    }
+
+    .show-wallet-score #inputScore {
+        padding: 5px;
+        padding-left: 40px;
+        border-radius: 6px;
+        border: none;
+        border: 2px solid #ff9fd8;
+        background-color: #f7c0e0;
+        /* background-image: linear-gradient(315deg, rgb(186, 220, 255) 0%, rgb(255, 205, 230) 100%); */
+
+
+    }
+</style>
+<header>
+
+    <a href="#" class="logo"><img src="/img/Logo-unicron.png" alt=""></a>
+    <ul>
+        <li><a href="/pages/index.html">Home</a></li>
+        <li><a href="/pages/play-game.html">Play Game</a></li>
+        <li><a href="/pages/redeem-rewards.html">Redeem Rewards</a></li>
+        <li>
+            <div class="show-wallet-score">
+                <span class="spanWallet"><img width="18px" src="/img/icon/wallet.png" alt=""></span>
+                <input type="text" value="1,000" id="inputWallet">
+                <span class="spanScore"><img width="18px" src="/img/icon/score-star.png" alt=""></span>
+                <input type="text" value="1,200" id="inputScore">
+            </div>
+        </li>
+
+    </ul>
+</header>
 
 <!-- <script src="/Js/script.js"></script> -->
 
