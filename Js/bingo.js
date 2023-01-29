@@ -1,16 +1,20 @@
-let count = 300;
+let count = 30;
 let statusBingo = 0;
 let CheckS = 0;
-countBingo()
-function countBingo(){
+let intervalTurbo = 1000;
+countBingo();
+function countBingo() {
   document.getElementById("TimeBingo").innerHTML = count;
-  
 }
 document.getElementById("_checkbox").addEventListener("change", function () {
   if (this.checked) {
+    icon_Autoimg.src = "/img/icon/automaticOn.png";
+
     CheckS = 0;
     loop();
   } else {
+    icon_Autoimg.src = "/img/icon/automaticOff.png";
+
     CheckS = 1;
     clearInterval(TimeBingo);
   }
@@ -30,7 +34,7 @@ function loop() {
     } else {
       clearInterval(TimeBingo);
     }
-  }, 100);
+  }, intervalTurbo);
 }
 
 function random() {
@@ -129,10 +133,7 @@ function random() {
 
       Swal.fire({
         icon: "success",
-        title:
-          "<h2 >ยินดีด้วย" +
-          "คุณ: " +
-          "&nbsp;&nbsp;Bingo!</h2>" ,
+        title: "<h2 >ยินดีด้วย" + "คุณ: " + "&nbsp;&nbsp;Bingo!</h2>",
         width: 600,
         padding: "3em",
         color: "#716add",
@@ -193,10 +194,7 @@ function random() {
 
       Swal.fire({
         icon: "success",
-        title:
-          "<h2 >ยินดีด้วย" +
-          "คุณ: " +
-          "&nbsp;&nbsp;Bingo!</h2>",
+        title: "<h2 >ยินดีด้วย" + "คุณ: " + "&nbsp;&nbsp;Bingo!</h2>",
         width: 600,
         padding: "3em",
         color: "#716add",
@@ -328,48 +326,55 @@ function checkForCompletedLines(numberR) {
   return CompletedLines;
 }
 
-
 let checkboxT = document.querySelector("#_checkbox_turbo");
-    let icon_Thunder = document.querySelector("#icon_Thunder");
+let icon_Thunder = document.querySelector("#icon_Thunder");
 
+checkboxT.addEventListener("change", function () {
+  if (checkboxT.checked) {
+    icon_Thunder.src = "/img/icon/thunderOn.png";
+    intervalTurbo = 100;
+  } else {
+    icon_Thunder.src = "/img/icon/thunderOff.png";
+    intervalTurbo = 1000;
+  }
+});
 
+// setInterval(function () {
+//   checkboxT.addEventListener("change", function () {
+//     if (checkboxT.checked) {
+//       icon_Thunder.src = "/img/icon/thunderOn.png";
+//       clearInterval(TimeBingo);
+//       intervalTurbo = 100;
+//     } else {
+//       icon_Thunder.src = "/img/icon/thunderOff.png";
+//       clearInterval(TimeBingo);
+//       intervalTurbo = 1000;
+//     }
+//   });
+//   console.log(intervalTurbo);
+// }, 100);
 
-    checkboxT.addEventListener("change", function () {
-        if (checkboxT.checked) {
-            icon_Thunder.src = "/img/icon/thunderOn.png";
-        } else {
-            icon_Thunder.src = "/img/icon/thunderOff.png";
-        }
+let TestBTn = document.getElementById("TestBTn");
+let AddC = document.querySelector(".addcount");
+let clearAppC = document.querySelector(".clearAppC");
 
-    });
-    let checkboxA = document.querySelector("#_checkbox");
-    let icon_Autoimg = document.querySelector("#icon_Autoimg");
-    checkboxA.addEventListener("change", function () {
-        if (checkboxA.checked) {
-            icon_Autoimg.src = "/img/icon/automaticOn.png";
-        } else {
-            icon_Autoimg.src = "/img/icon/automaticOff.png";
-        }
-    });
-    let TestBTn = document.getElementById('TestBTn');
-    let AddC = document.querySelector('.addcount');
-    let clearAppC = document.querySelector('.clearAppC');
+AddC.style.bottom = "-300px";
 
-    //Initially hiding the AddC
-    AddC.style.bottom = '-300px';
+TestBTn.addEventListener("click", function () {
+  if (AddC.style.bottom === "0px") {
+    AddC.style.bottom = "-300px";
+  } else {
+    AddC.style.bottom = "0px";
+  }
+});
+clearAppC.addEventListener("click", function () {
+  if (AddC.style.bottom === "0px") {
+    AddC.style.bottom = "-300px";
+  } else {
+    AddC.style.bottom = "0px";
+  }
+});
 
-    //Button event listener
-    TestBTn.addEventListener('click', function () {
-        if (AddC.style.bottom === '0px') {
-            AddC.style.bottom = '-300px';
-        } else {
-            AddC.style.bottom = '0px';
-        }
-    });
-    clearAppC.addEventListener('click', function () {
-        if (AddC.style.bottom === '0px') {
-            AddC.style.bottom = '-300px';
-        } else {
-            AddC.style.bottom = '0px';
-        }
-    });
+const urlParams = new URLSearchParams(window.location.search);
+const activeIndex = urlParams.get("activeIndex");
+console.log(activeIndex);

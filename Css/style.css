@@ -495,30 +495,186 @@ header ul li a {
 }
 
 
-.addcount{
-    position:fixed;
+.addcount {
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     margin: 0 auto;
     bottom: 0;
     width: 600px;
     height: 300px;
-    background-image: linear-gradient(315deg, rgb(130, 192, 255) 0%, rgb(255, 145, 200) 100%);
+    background-image: linear-gradient(315deg, rgb(111, 183, 255) 0%, rgb(255, 126, 191) 100%);
     border-radius: 15px 15px 0 0;
     transition: bottom 0.5s;
     border: 5px solid #ffffff;
-    box-shadow: 2px 2px 10px 8px rgba(0, 0, 0, 0.233);
+    box-shadow: 2px 2px 10px 8px rgba(0, 0, 0, 0.356);
     display: grid;
+    grid-template-columns: [main-1] 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
-.addcount .clearAppC{
-   position: absolute;
- 
-   top: 10px;
-   right: 10px;
+
+.addcount .add-countH {
+
+
+    grid-column: main-1 / main-1;
+    grid-row: 1;
+    display: grid;
+    align-items: center;
+    border-bottom: 2px solid #ffffff;
+
 }
-.addcount .clearAppC img{
-   width: 28px;
-   cursor: pointer;
+
+.addcount .add-countB {
+    grid-column: main-1;
+    grid-row: 2 /5;
+    display: grid;
+
+    grid-template-columns: [main-1] 1fr [main-2] 1fr [main-3] 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+
+}
+
+.addcount .add-countB .increment {
+    grid-column: main-2;
+    grid-row: 1 / 3;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    background: none;
+    border: none;
+    color: #fff;
+
+
+
+
+
+
+}
+
+.addcount .add-countB .increment img {
+    width: 30px;
+
+
+}
+
+
+
+
+
+.addcount .add-countB .decrement {
+    grid-column: main-2;
+    grid-row: 4 /6;
+    justify-content: center;
+    display: grid;
+    background: none;
+    align-items: center;
+
+    border: none;
+    color: #fff;
+
+
+
+
+}
+
+.addcount .add-countB .decrement img {
+    width: 30px;
+
+
+
+
+
+}
+
+
+.addcount .add-countB input {
+    grid-column: main-2;
+    grid-row: 3;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+
+
+
+
+
+
+
+}
+
+.addcount .add-countB span {
+    grid-column: main-2;
+    grid-row: 3;
+    display: grid;
+    text-align: left;
+    align-items: center;
+    margin-left: 15px;
+    z-index: 1;
+
+
+
+
+
+}
+
+
+
+.addcount .add-countF {
+    grid-column: main-1;
+    grid-row: 5;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #ffffff;
+
+}
+
+.addcount .add-countF button {
+
+    margin-top: 0 !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    color: rgb(48, 34, 34);
+    border-radius: 0.5rem;
+    border: none;
+    /* background-color: #e42598; */
+    border: 2px solid #ffffff;
+
+    background-image: linear-gradient(180deg, rgb(253, 96, 174) 0%, rgb(69, 162, 255) 100%);
+
+
+
+
+
+}
+
+.addcount .add-countF button:active {
+    background-image: linear-gradient(180deg, rgba(25, 136, 247, 1) 0%, rgba(247, 25, 136, 1) 100%) !important;
+
+
+
+}
+
+.addcount .add-countF button:hover {
+    background-image: linear-gradient(180deg, rgba(69, 162, 255, 0.479) 0%, rgba(253, 96, 174, 0.493) 100%);
+
+
+}
+
+.addcount .clearAppC {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+}
+
+.addcount .clearAppC img {
+    width: 28px;
+    cursor: pointer;
 
 }
 
@@ -599,6 +755,47 @@ header ul li a {
 }
 
 
+.modal-body .swiper-button-prev-2 {
+    position: absolute;
+    background: none;
+    border: none;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+   
+    
 
+   
+   
+}
+.modal-body .swiper-button-next-2 {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+   
+    
+
+   
+   
+}
+.modal-body .swiper-button-next-2 img {
+    width: 3rem;
+   
+    
+
+   
+   
+}
+.modal-body .swiper-button-prev-2 img {
+    width: 3rem;
+   
+    
+
+   
+   
+}
 
 /* index Page  */
