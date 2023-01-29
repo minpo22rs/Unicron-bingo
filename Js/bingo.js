@@ -219,6 +219,20 @@ function random() {
     console.log("มีคน Bingo แล้ว");
   }
 }
+let CardBingo_0 = document.querySelector(".cardBingo-0");
+let CardBingo_1 = document.querySelector(".cardBingo-1");
+let CardBingo_2 = document.querySelector(".cardBingo-2");
+let CardBingo_3 = document.querySelector(".cardBingo-3");
+
+let CardBingoAll = [CardBingo_0, CardBingo_1, CardBingo_2, CardBingo_3];
+
+const urlParams = new URLSearchParams(window.location.search);
+const activeIndex = urlParams.get("activeIndex");
+console.log(activeIndex);
+console.log(CardBingoAll);
+CardBingoAll[activeIndex].classList.remove("off-Card");
+CardBingoAll[activeIndex].id = "tableBingo_"+ activeIndex;
+
 
 let rowArrays = {};
 let colArrays = {};
@@ -226,17 +240,17 @@ let rowData = [];
 function updateTable(randomNum) {
   let s = [];
 
-  var table = document.getElementById("tableBingo");
-
+  var table = document.getElementById("tableBingo_"+activeIndex);
+  console.log(table);
   for (var i = 0, row; (row = table.rows[i]); i++) {
     for (var j = 0, col; (col = row.cells[j]); j++) {
-      var idNum = document.getElementById("number_" + "1-" + randomNum);
+      var idNum = document.getElementById("number_" + activeIndex +"-" + randomNum);
       if (col.textContent == randomNum) {
         col.innerHTML = `<img class="my-img-star" src="/img/icon/—Pngtree—pink unicorn horn clip art_5902854 (1).png" alt="${randomNum}">`;
         idNum.classList.remove("my-bg_num");
         idNum.classList.add("my-bingo");
 
-        if (!rowArrays[i]) {
+        if (!rowArrays[i]) {//เก็บที่ลงอาร์เลย์
           rowArrays[i] = [randomNum];
         } else if (!rowArrays[i].includes(randomNum)) {
           rowArrays[i].push(randomNum);
@@ -257,13 +271,14 @@ function updateTable(randomNum) {
   console.log(colArrays);
 }
 
-function checkForCompletedLines(numberR) {
+function checkForCompletedLines(numberR) {//เช็ค class มาครบ 5 หรือ ไม่
   var rowCompletedLines = 0;
   var rowB = 0;
   var colCompletedLines = 0;
   var colB = 0;
 
-  var table = document.getElementById("tableBingo");
+  var table = document.getElementById("tableBingo_"+activeIndex);
+
 
   // check rows
   for (var i = 0, row; (row = table.rows[i]); i++) {
@@ -301,7 +316,7 @@ function checkForCompletedLines(numberR) {
     }
   }
 
-  function checkBingo(RowCol, Rc) {
+  function checkBingo(RowCol, Rc) {//เมื่อ bingo จะเช็คว่า bingo จริงมั้ย
     if (Rc == "R") {
       if (rowArrays[RowCol].length == 5) {
         let Bingo = "Bingo Rowที่: " + RowCol + "เลข: " + rowArrays[RowCol];
@@ -339,7 +354,6 @@ checkboxT.addEventListener("change", function () {
   }
 });
 
-
 let TestBTn = document.getElementById("TestBTn");
 let AddC = document.querySelector(".addcount");
 let clearAppC = document.querySelector(".clearAppC");
@@ -360,17 +374,3 @@ clearAppC.addEventListener("click", function () {
     AddC.style.bottom = "0px";
   }
 });
-
-let CardBingo_0 = document.querySelector(".cardBingo-0");
-let CardBingo_1 = document.querySelector(".cardBingo-1");
-let CardBingo_2 = document.querySelector(".cardBingo-2");
-let CardBingo_3 = document.querySelector(".cardBingo-3");
-
-let CardBingoAll = [CardBingo_0, CardBingo_1, CardBingo_2, CardBingo_3];
-
-const urlParams = new URLSearchParams(window.location.search);
-const activeIndex = urlParams.get("activeIndex");
-console.log(activeIndex);
-console.log(CardBingoAll);
-CardBingoAll[activeIndex].id ="tableBingo";
-CardBingoAll[activeIndex].classList.remove("off-Card");

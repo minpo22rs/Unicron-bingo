@@ -29,7 +29,7 @@ body {
     background-image: url('/img/Card-Bingo2.png') !important;
 }
 
-#tableBingo {
+.tableBingos {
     display: grid;
     grid-template-rows: 110px 1fr;
 
@@ -37,7 +37,7 @@ body {
 
 }
 
-#tableBingo tbody {
+.tableBingos tbody {
 
     grid-row: 2 / span 1;
 }
