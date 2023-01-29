@@ -152,7 +152,7 @@
                         <input type="checkbox" id="_checkbox">
                         <label class="my-label-CB text-center" for="_checkbox">
                             <div id="tick_mark">
-                                <img width="100%" src="/img/automatic.png" alt="">
+                                <img id="icon_Autoimg" width="100%" src="/img/automaticOff.png" alt="">
 
 
                             </div>
@@ -160,12 +160,10 @@
                     </div>
                     <div class="btn-turbo">
                         <input type="checkbox" id="_checkbox_turbo">
-                        <label class="my-label-CB_turbo text-center" for="_checkbox_turbo">
-                            <div id="tick_mark_turbo" >
-                               
-                                <span class="material-symbols-outlined">
-                                    flash_off
-                                </span>
+                        <label class="my-label-CB_turbo text-center p-1" for="_checkbox_turbo">
+                            <div id="tick_mark_turbo" class="">
+                                <img id="icon_Thunder" width="100%" src="/img/thunderOff.png" alt="">
+
                             </div>
 
 
@@ -194,22 +192,27 @@
         .then(data => {
             document.querySelector('#menubar_file').innerHTML = data;
         });
-    var checkbox = document.getElementById("_checkbox_turbo");
+    let checkboxT = document.querySelector("#_checkbox_turbo");
+    let icon_Thunder = document.querySelector("#icon_Thunder");
 
-    var flashOff = document.getElementsByClassName("material-symbols-outlined")[0];
 
-    checkbox.addEventListener("change", function () {
-        if (checkbox.checked) {
-            
-            flashOff.textContent = "flash_on";
-        
 
+    checkboxT.addEventListener("change", function () {
+        if (checkboxT.checked) {
+            icon_Thunder.src = "/img/thunderOn.png";
         } else {
-           
-            flashOff.textContent = "flash_off";
-
+            icon_Thunder.src = "/img/thunderOff.png";
         }
-        
+
+    });
+    let checkboxA = document.querySelector("#_checkbox");
+    let icon_Autoimg = document.querySelector("#icon_Autoimg");
+    checkboxA.addEventListener("change", function () {
+        if (checkboxA.checked) {
+            icon_Autoimg.src = "/img/automaticOn.png";
+        } else {
+            icon_Autoimg.src = "/img/automaticOff.png";
+        }
     });
 </script>
 

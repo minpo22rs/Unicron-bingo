@@ -356,7 +356,7 @@ body {
 
 
 #_checkbox:checked+label {
-    background-color: rgba(255, 92, 173, 1);
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -389,7 +389,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px;
+  
     text-align: center;
     align-items: center;
     display: inline;
@@ -403,13 +403,13 @@ body {
 
 #_checkbox_turbo:checked+label {
     display: block;
-
-
-
-
-    background-color: rgba(255, 92, 173, 1);
+    background-color: rgba(255, 255, 255, 0);
 
 }
+
+
+
+
 
 /* btn-controll */
 
