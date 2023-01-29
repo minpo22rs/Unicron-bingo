@@ -234,7 +234,7 @@ function updateTable(randomNum) {
     for (var j = 0, col; (col = row.cells[j]); j++) {
       var idNum = document.getElementById("number_" + "1-" + randomNum);
       if (col.textContent == randomNum) {
-        col.innerHTML = `<img class="my-img-star" src="/img/—Pngtree—pink unicorn horn clip art_5902854 (1).png" alt="${randomNum}">`;
+        col.innerHTML = `<img class="my-img-star" src="/img/icon/—Pngtree—pink unicorn horn clip art_5902854 (1).png" alt="${randomNum}">`;
         idNum.classList.remove("my-bg_num");
         idNum.classList.add("my-bingo");
 
@@ -327,3 +327,49 @@ function checkForCompletedLines(numberR) {
 
   return CompletedLines;
 }
+
+
+let checkboxT = document.querySelector("#_checkbox_turbo");
+    let icon_Thunder = document.querySelector("#icon_Thunder");
+
+
+
+    checkboxT.addEventListener("change", function () {
+        if (checkboxT.checked) {
+            icon_Thunder.src = "/img/icon/thunderOn.png";
+        } else {
+            icon_Thunder.src = "/img/icon/thunderOff.png";
+        }
+
+    });
+    let checkboxA = document.querySelector("#_checkbox");
+    let icon_Autoimg = document.querySelector("#icon_Autoimg");
+    checkboxA.addEventListener("change", function () {
+        if (checkboxA.checked) {
+            icon_Autoimg.src = "/img/icon/automaticOn.png";
+        } else {
+            icon_Autoimg.src = "/img/icon/automaticOff.png";
+        }
+    });
+    let TestBTn = document.getElementById('TestBTn');
+    let AddC = document.querySelector('.addcount');
+    let clearAppC = document.querySelector('.clearAppC');
+
+    //Initially hiding the AddC
+    AddC.style.bottom = '-300px';
+
+    //Button event listener
+    TestBTn.addEventListener('click', function () {
+        if (AddC.style.bottom === '0px') {
+            AddC.style.bottom = '-300px';
+        } else {
+            AddC.style.bottom = '0px';
+        }
+    });
+    clearAppC.addEventListener('click', function () {
+        if (AddC.style.bottom === '0px') {
+            AddC.style.bottom = '-300px';
+        } else {
+            AddC.style.bottom = '0px';
+        }
+    });

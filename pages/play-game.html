@@ -132,10 +132,10 @@
                     <h1 class="my-HranD my-3 text-center ">
 
                         <label class="my-label-D" id="number">
-                            0
+
                         </label>
                     </h1>
-                    <div class="rand-count p-0 m-0">
+                    <div id="TestBTn" class="rand-count p-0 m-0">
                         <label id="TimeBingo">
 
                         </label>
@@ -145,14 +145,14 @@
 
                 <div class="btn-controll ">
                     <button type="button" class="btn  my-btn-rand mx-3 p-0 text-center" onclick="random()">
-                        <img src="/img/icon-btn-bgo2.png" class="Spin_icon" id="sharp_icon" alt="">
+                        <img src="/img/icon/icon-btn-bgo2.png" class="Spin_icon" id="sharp_icon" alt="">
                     </button>
 
                     <div class="btn-auto">
                         <input type="checkbox" id="_checkbox">
                         <label class="my-label-CB text-center" for="_checkbox">
                             <div id="tick_mark">
-                                <img id="icon_Autoimg" width="100%" src="/img/automaticOff.png" alt="">
+                                <img id="icon_Autoimg" width="100%" src="/img/icon/automaticOff.png" alt="">
 
 
                             </div>
@@ -162,7 +162,7 @@
                         <input type="checkbox" id="_checkbox_turbo">
                         <label class="my-label-CB_turbo text-center p-1" for="_checkbox_turbo">
                             <div id="tick_mark_turbo" class="">
-                                <img id="icon_Thunder" width="100%" src="/img/thunderOff.png" alt="">
+                                <img id="icon_Thunder" width="100%" src="/img/icon/thunderOff.png" alt="">
 
                             </div>
 
@@ -180,6 +180,22 @@
         </div>
 
     </div>
+
+    <div class="addcount">
+        <div class="add-countH">
+            <span class="clearAppC">
+                <img class="" src="/img/icon/close_white_24dp.svg" alt="..." />
+            </span>
+        </div>
+        <div class="add-countB">
+            
+        </div>
+        <div class="add-countF">
+
+        </div>
+       
+
+    </div>
 </body>
 <script src="/Js/bingo.js"></script>
 <script src="/Js/script.js"></script>
@@ -192,28 +208,9 @@
         .then(data => {
             document.querySelector('#menubar_file').innerHTML = data;
         });
-    let checkboxT = document.querySelector("#_checkbox_turbo");
-    let icon_Thunder = document.querySelector("#icon_Thunder");
 
 
 
-    checkboxT.addEventListener("change", function () {
-        if (checkboxT.checked) {
-            icon_Thunder.src = "/img/thunderOn.png";
-        } else {
-            icon_Thunder.src = "/img/thunderOff.png";
-        }
-
-    });
-    let checkboxA = document.querySelector("#_checkbox");
-    let icon_Autoimg = document.querySelector("#icon_Autoimg");
-    checkboxA.addEventListener("change", function () {
-        if (checkboxA.checked) {
-            icon_Autoimg.src = "/img/automaticOn.png";
-        } else {
-            icon_Autoimg.src = "/img/automaticOff.png";
-        }
-    });
 </script>
 
 </html>
