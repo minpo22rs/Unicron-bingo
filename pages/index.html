@@ -82,7 +82,7 @@
     }
 </style>
 
-<body>
+<body style="margin-top: 95px;">
     <div id="menubar_file"></div>
 
     <img class="my-4  " style="width: 20%;" src="/img/RewardsTtext.png" alt="">
@@ -151,7 +151,7 @@
             <div class="col ">
                 <div class="card h-100 ">
 
-                    <img class="card-img-top" src="/img/Card-Bingo2.png" alt="..." />
+                    <img class="card-img-top" src="/img/CardShow.png" alt="..." />
 
                     <div class="card-body p-4">
                         <div class="text-center price-card">
@@ -171,7 +171,7 @@
             <div class="col ">
                 <div class="card h-100">
 
-                    <img class="card-img-top" src="/img/Card-Bingo2.png" alt="..." />
+                    <img class="card-img-top" src="/img/CardShow.png" alt="..." />
 
                     <div class="card-body p-4">
                         <div class="text-center price-card">
@@ -191,7 +191,7 @@
             <div class="col ">
                 <div class="card h-100">
 
-                    <img class="card-img-top" src="/img/Card-Bingo2.png" alt="..." />
+                    <img class="card-img-top" src="/img/CardShow.png" alt="..." />
 
                     <div class="card-body p-4">
                         <div class="text-center price-card">
@@ -226,12 +226,12 @@
 
                         <div class="swiper-wrapper">
 
-                            <div class="swiper-slide"><img style="width: 100%;" src="/img/Card-Bingo2.png" alt=""></div>
-                            <div class="swiper-slide"><img style="width: 100%;" src="/img/Card-Bingo2.png" alt=""></div>
-                            <div class="swiper-slide"><img style="width: 100%;" src="/img/Card-Bingo2.png" alt=""></div>
-
-
+                            <div class="swiper-slide"><img style="width: 100%;" src="/img/cardBingo-1.png" alt=""></div>
+                            <div class="swiper-slide"><img style="width: 100%;" src="/img/cardBingo-2.png" alt=""></div>
+                            <div class="swiper-slide"><img style="width: 100%;" src="/img/cardBingo-3.png" alt=""></div>
                         </div>
+
+
 
 
                     </div>
@@ -306,7 +306,7 @@
     const swiper2 = new Swiper('#swiper_2', {
         // cssMode: true,
 
-        // loop: false,
+        loop: true,
         pagination: {
             el: '.swiper-pagination-2',
         },
@@ -316,19 +316,7 @@
         },
 
     });
-    let indexCardNum = 0;
-    $('.swiper-button-prev-2').on('click', function () {
-        if (indexCardNum != 0) {
-            indexCardNum--
-            console.log(indexCardNum);
-        }
-    });
-    $('.swiper-button-next-2').on('click', function () {
-        if (indexCardNum < 3) {
-            indexCardNum++
-            console.log(indexCardNum);
-        }
-    });
+    
     function sendPosition() {
         var activeIndex = $('.swiper-pagination-bullet-active').index();
         window.location.href = '/pages/play-game.html?activeIndex=' + activeIndex;

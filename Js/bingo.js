@@ -375,6 +375,15 @@ clearAppC.addEventListener("click", function () {
   }
 });
 
+let CardBingo_0 = document.querySelector(".cardBingo-0");
+let CardBingo_1 = document.querySelector(".cardBingo-1");
+let CardBingo_2 = document.querySelector(".cardBingo-2");
+let CardBingo_3 = document.querySelector(".cardBingo-3");
+
+let CardBingoAll = [CardBingo_0, CardBingo_1, CardBingo_2, CardBingo_3];
+
 const urlParams = new URLSearchParams(window.location.search);
 const activeIndex = urlParams.get("activeIndex");
 console.log(activeIndex);
+console.log(CardBingoAll);
+CardBingoAll[activeIndex].classList.remove("off-Card");
