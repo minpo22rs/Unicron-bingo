@@ -3,8 +3,8 @@
         display: grid;
 
         grid-template-columns: [main-1] 140px;
-        grid-template-rows: 1fr 1fr;
-        row-gap: 10px;
+        grid-template-rows:  1fr;
+        /* row-gap: 10px; */
     }
 
     .show-wallet-score span.spanWallet,
@@ -55,7 +55,7 @@
         border-radius: 6px;
         border: none;
         border: 2px solid #ff9fd8;
-        background-color: #f7c0e0;
+        background-color: #fff5fb;
         /* background-image: linear-gradient(315deg, rgb(186, 220, 255) 0%, rgb(255, 205, 230) 100%); */
 
 
@@ -70,10 +70,11 @@
         <li><a href="/pages/redeem-rewards.html">Redeem Rewards</a></li>
         <li>
             <div class="show-wallet-score">
-                <span class="spanWallet"><img width="18px" src="/img/icon/wallet.png" alt=""></span>
-                <input type="text" value="1,000" id="inputWallet">
+                <!-- <span class="spanWallet"><img width="18px" src="/img/icon/wallet.png" alt=""></span>
+                 <label id="inputWallet" for="">1,000</label> -->
                 <span class="spanScore"><img width="18px" src="/img/icon/score-star.png" alt=""></span>
-                <input type="text" value="1,200" id="inputScore">
+                <label id="inputScore"  for="">0</label>
+
             </div>
         </li>
 

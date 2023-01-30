@@ -1,3 +1,19 @@
+let CardBingo_0 = document.querySelector(".cardBingo-0");
+let CardBingo_1 = document.querySelector(".cardBingo-1");
+let CardBingo_2 = document.querySelector(".cardBingo-2");
+let CardBingo_3 = document.querySelector(".cardBingo-3");
+
+let CardBingoAll = [CardBingo_0, CardBingo_1, CardBingo_2, CardBingo_3];
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const scCoun = urlParams.get("scCoun");
+const activeIndex = urlParams.get("activeIndex");
+console.log(scCoun);
+CardBingoAll[activeIndex].classList.remove("off-Card");
+CardBingoAll[activeIndex].id = "tableBingo_" + activeIndex;
+let scoreAll = [300, 700, 1200];
+
 let count = 30;
 let statusBingo = 0;
 let CheckS = 0;
@@ -93,6 +109,9 @@ function random() {
 
     if (CompletedLines[0] >= 1) {
       statusBingo = 1;
+      document.getElementById("inputScore").innerHTML = +scoreAll[scCoun];
+      console.log(scoreAll[scCoun]);
+
       console.log("Row  Bingo! You won!");
 
       var duration = 15 * 1000;
@@ -133,7 +152,7 @@ function random() {
 
       Swal.fire({
         icon: "success",
-        title: "<h2 >ยินดีด้วย" + "คุณ: " + "&nbsp;&nbsp;Bingo!</h2>",
+        title: "<h2>Bingo!</h2> " + "<br>" + "+" + scoreAll[scCoun] + "&nbspคะแนน",
         width: 600,
         padding: "3em",
         color: "#716add",
@@ -155,6 +174,8 @@ function random() {
       });
     } else if (CompletedLines[1] >= 1) {
       statusBingo = 1;
+      document.getElementById("inputScore").innerHTML = +scoreAll[scCoun];
+      console.log(scoreAll[scCoun]);
       console.log("Colum  Bingo! You won!");
       var duration = 15 * 1000;
       var animationEnd = Date.now() + duration;
@@ -194,7 +215,8 @@ function random() {
 
       Swal.fire({
         icon: "success",
-        title: "<h2 >ยินดีด้วย" + "คุณ: " + "&nbsp;&nbsp;Bingo!</h2>",
+        title:
+          "<h2>Bingo!</h2> " + "<br>" + "+" + scoreAll[scCoun] + "&nbsp;คะแนน",
         width: 600,
         padding: "3em",
         color: "#716add",
@@ -216,23 +238,18 @@ function random() {
       });
     }
   } else {
-    console.log("มีคน Bingo แล้ว");
+    Swal.fire({
+      icon: "error",
+      title: "ขออภัย! เกมส์จบลงแล้ว ",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
   }
 }
-let CardBingo_0 = document.querySelector(".cardBingo-0");
-let CardBingo_1 = document.querySelector(".cardBingo-1");
-let CardBingo_2 = document.querySelector(".cardBingo-2");
-let CardBingo_3 = document.querySelector(".cardBingo-3");
-
-let CardBingoAll = [CardBingo_0, CardBingo_1, CardBingo_2, CardBingo_3];
-
-const urlParams = new URLSearchParams(window.location.search);
-const activeIndex = urlParams.get("activeIndex");
-console.log(activeIndex);
-console.log(CardBingoAll);
-CardBingoAll[activeIndex].classList.remove("off-Card");
-CardBingoAll[activeIndex].id = "tableBingo_"+ activeIndex;
-
 
 let rowArrays = {};
 let colArrays = {};
@@ -240,17 +257,20 @@ let rowData = [];
 function updateTable(randomNum) {
   let s = [];
 
-  var table = document.getElementById("tableBingo_"+activeIndex);
+  var table = document.getElementById("tableBingo_" + activeIndex);
   console.log(table);
   for (var i = 0, row; (row = table.rows[i]); i++) {
     for (var j = 0, col; (col = row.cells[j]); j++) {
-      var idNum = document.getElementById("number_" + activeIndex +"-" + randomNum);
+      var idNum = document.getElementById(
+        "number_" + activeIndex + "-" + randomNum
+      );
       if (col.textContent == randomNum) {
         col.innerHTML = `<img class="my-img-star" src="/img/icon/—Pngtree—pink unicorn horn clip art_5902854 (1).png" alt="${randomNum}">`;
         idNum.classList.remove("my-bg_num");
         idNum.classList.add("my-bingo");
 
-        if (!rowArrays[i]) {//เก็บที่ลงอาร์เลย์
+        if (!rowArrays[i]) {
+          //เก็บที่ลงอาร์เลย์
           rowArrays[i] = [randomNum];
         } else if (!rowArrays[i].includes(randomNum)) {
           rowArrays[i].push(randomNum);
@@ -271,14 +291,14 @@ function updateTable(randomNum) {
   console.log(colArrays);
 }
 
-function checkForCompletedLines(numberR) {//เช็ค class มาครบ 5 หรือ ไม่
+function checkForCompletedLines(numberR) {
+  //เช็ค class มาครบ 5 หรือ ไม่
   var rowCompletedLines = 0;
   var rowB = 0;
   var colCompletedLines = 0;
   var colB = 0;
 
-  var table = document.getElementById("tableBingo_"+activeIndex);
-
+  var table = document.getElementById("tableBingo_" + activeIndex);
 
   // check rows
   for (var i = 0, row; (row = table.rows[i]); i++) {
@@ -316,7 +336,8 @@ function checkForCompletedLines(numberR) {//เช็ค class มาครบ 5
     }
   }
 
-  function checkBingo(RowCol, Rc) {//เมื่อ bingo จะเช็คว่า bingo จริงมั้ย
+  function checkBingo(RowCol, Rc) {
+    //เมื่อ bingo จะเช็คว่า bingo จริงมั้ย
     if (Rc == "R") {
       if (rowArrays[RowCol].length == 5) {
         let Bingo = "Bingo Rowที่: " + RowCol + "เลข: " + rowArrays[RowCol];

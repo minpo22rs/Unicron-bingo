@@ -163,7 +163,7 @@
 
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><button data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
-                                type="button" class="my-btn-bayCard" onclick="showpop_up()">Buy</button>
+                                type="button" class="my-btn-bayCard" data-sccount="0" onclick="showpop_up(this.getAttribute('data-sccount'))">Buy</button>
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
 
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><button data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
-                                type="button" class="my-btn-bayCard" onclick="showpop_up()">Buy</button>
+                                type="button" class="my-btn-bayCard" data-sccount="1" onclick="showpop_up(this.getAttribute('data-sccount'))">Buy</button>
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
 
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><button data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
-                                type="button" class="my-btn-bayCard" onclick="showpop_up()">Buy</button>
+                                type="button" class="my-btn-bayCard" data-sccount="2" onclick="showpop_up(this.getAttribute('data-sccount'))">Buy</button>
                         </div>
                     </div>
                 </div>
@@ -316,12 +316,19 @@
         },
 
     });
+   
+    let scCount = 0;
+    function showpop_up(sc){
+        scCount =  sc;
+
+    }
     
     function sendPosition() {
+        
         var activeIndex = $('.swiper-pagination-bullet-active').index();
-        window.location.href = '/pages/play-game.html?activeIndex=' + activeIndex;
+        window.location.href = '/pages/play-game.html?scCoun=' + scCount + '&activeIndex=' + activeIndex;
     }
-
+    
 
 </script>
 <script src="/Js/script.js"></script>
